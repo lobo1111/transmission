@@ -1,12 +1,12 @@
 FROM centos:6
 
-RUN cd /usr/local/src \
-    wget https://transmission.cachefly.net/transmission-2.84.tar.xz \
-    tar xvf transmission-2.84.tar.xz \
-    cd transmission-2.84 \
-    ./configure --prefix=/usr \
-    make \
-    make install \
+RUN cd /usr/local/src
+RUN wget https://transmission.cachefly.net/transmission-2.84.tar.xz
+RUN tar xvf transmission-2.84.tar.xz
+RUN cd transmission-2.84
+RUN ./configure --prefix=/usr
+RUN make
+RUN make install
 
 ENV CONFIG_PATH /var/lib/transmission/.config/transmission/settings.json
 
