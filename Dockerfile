@@ -3,7 +3,7 @@ FROM centos:6
 RUN yum -y install wget
 RUN cd /usr/local/src
 RUN wget https://transmission.cachefly.net/transmission-2.84.tar.xz
-RUN tar xvf transmission-2.84.tar.xz
+RUN gtar xf transmission-2.84.tar.xz
 RUN cd transmission-2.84
 RUN ./configure --prefix=/usr
 RUN make
