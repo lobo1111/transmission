@@ -1,5 +1,6 @@
 FROM centos:6
 
+RUN yum -t install wget
 RUN cd /usr/local/src
 RUN wget https://transmission.cachefly.net/transmission-2.84.tar.xz
 RUN tar xvf transmission-2.84.tar.xz
