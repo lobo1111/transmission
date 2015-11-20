@@ -1,13 +1,8 @@
 FROM centos:6
 
-RUN yum -y install wget tar xz
-RUN cd /usr/local/src
-RUN wget https://transmission.cachefly.net/transmission-2.84.tar.xz
-RUN tar xf transmission-2.84.tar.xz
-RUN cd transmission-2.84
-RUN ./configure --prefix=/usr
-RUN make
-RUN make install
+RUN cd /etc/yum.repos.d/; \
+    wget http://geekery.altervista.org/geekery-el6-x86_64.repo; \
+    yum -y install transmission-daemon;
 
 ENV CONFIG_PATH /var/lib/transmission/.config/transmission/settings.json
 
