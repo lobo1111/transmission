@@ -5,7 +5,7 @@ RUN cd /etc/yum.repos.d/; \
     wget http://geekery.altervista.org/geekery-el6-x86_64.repo; \
     yum -y install transmission-daemon;
 
-ENV CONFIG_PATH /var/lib/transmission/.config/transmission/settings.json
+ENV CONFIG_PATH /var/lib/transmission/settings.json
 
 ENV ENABLE_AUTH true
 ENV USER torrent
