@@ -12,10 +12,6 @@ ENV USER torrent
 ENV PASSWORD pwd
 ENV ENABLE_WHITELIST false
 ENV WHITELIST 127.0.0.1
-
-ENV INCOMPLETE_DIR /opt/incomplete
-ENV COMPLETE_DIR /opt/complete
-ENV TORRENTS_WATCHDIR /opt/torrents
 ENV ENABLE_INCOMPLETE_DIR true
 
 COPY settings.json /var/lib/transmission/settings.json
