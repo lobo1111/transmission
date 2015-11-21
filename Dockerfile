@@ -17,6 +17,7 @@ ENV INCOMPLETE_DIR /opt/incomplete
 ENV COMPLETE_DIR /opt/complete
 ENV TORRENTS_WATCHDIR /opt/torrents
 
+COPY settings.json /var/lib/transmission/settings.json
 COPY start.sh /opt/
 RUN chmod +x /opt/start.sh
 
