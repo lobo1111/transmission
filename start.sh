@@ -7,10 +7,5 @@ sed -i "s/\"rpc-whitelist-enabled.*/\"rpc-whitelist-enabled\": $ENABLE_WHITELIST
 sed -i "s/\"rpc-whitelist:.*/\"rpc-whitelist\": \"$WHITELIST\",/" $CONFIG_PATH
 sed -i "s/\"incomplete-dir-enabled.*/\"incomplete-dir-enabled\": $ENABLE_INCOMPLETE_DIR,/" $CONFIG_PATH
 
-service transmission-daemon start
-
-while :
-do
-        sleep 600
-done
+/usr/bin/transmission-daemon --foreground --config-dir /var/lib/transmission
 
