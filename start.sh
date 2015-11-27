@@ -11,9 +11,4 @@ if [ $SMB_ENABLE == "true" ]; then
     mount -t cifs -o username=$SMB_USER,password=$SMB_PWD $SMB_PATH /opt/complete
 fi
 
-service transmission-daemon start
-
-while :
-do
-        sleep 600
-done
+/usr/bin/transmission-daemon --foreground --config-dir /var/lib/transmission
