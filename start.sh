@@ -17,4 +17,3 @@ while :
 do
         sleep 600
 done
-
