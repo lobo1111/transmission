@@ -12,3 +12,4 @@ if [ $SMB_ENABLE == "true" ]; then
 fi
 
 /usr/bin/transmission-daemon --foreground --config-dir /var/lib/transmission
+
