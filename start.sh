@@ -7,6 +7,10 @@ sed -i "s/\"rpc-whitelist-enabled.*/\"rpc-whitelist-enabled\": $ENABLE_WHITELIST
 sed -i "s/\"rpc-whitelist:.*/\"rpc-whitelist\": \"$WHITELIST\",/" $CONFIG_PATH
 sed -i "s/\"incomplete-dir-enabled.*/\"incomplete-dir-enabled\": $ENABLE_INCOMPLETE_DIR,/" $CONFIG_PATH
 
+if [ $SMB_ENABLE == "true" ]; then
+    mount -t cifs -o username=$SMB_USER,password=$SMB_PWD $SMB_PATH /opt/complete
+fi
+
 service transmission-daemon start
 
 while :
